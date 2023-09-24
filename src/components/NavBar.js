@@ -25,16 +25,16 @@ export default function NavBar() {
             sm:left-[20%] flex sm:flex-row flex-col justify-evenly items-center transition-all duration-500 ease-in`}>
              <div className='w-[50%]'>
                 <ul className='flex  flex-col sm:flex-row py-[0.3125rem]   justify-evenly items-center gap-3'>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/Home">Home</NavLink>
                     </li>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/Feed">Feed</NavLink>
                     </li>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/">About</NavLink>
                     </li>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/">Contact Us</NavLink>
                     </li>
                     
@@ -42,10 +42,10 @@ export default function NavBar() {
              </div>
              <div className='w-[40%]'>
                 <ul className='flex flex-col sm:flex-row py-[0.3125rem]  justify-evenly items-center gap-2'>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1 border-white border-2 px-3 py-1 rounded-xl'>
                         <NavLink to = "/login">Login</NavLink>
                     </li>
-                    <li>
+                    <li className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1  px-3 py-1 rounded-xl shadow-black shadow-md '>
                         <NavLink to = "/signup">Sign Up</NavLink>
                     </li>
                 </ul>

@@ -13,11 +13,14 @@ function App() {
       {/* Use BrowserRouter */}
          <NavBar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/feed" element={<Feed />} />
         </Routes>
+        <div>
+          hello
+        </div>
         
     </div>
   );
