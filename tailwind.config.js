@@ -8,6 +8,7 @@ module.exports = {
         // Define your custom colors here
         'nav-color': '#ACAAFF',
         'button': '#6156E0',
+        
         // Add more custom colors as needed
       },
       backgroundGradient: {

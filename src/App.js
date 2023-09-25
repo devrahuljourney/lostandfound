@@ -7,11 +7,14 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import { useState } from 'react';
 function App() {
+  const[footer,setFooter] = useState(true);
   return (
     <div>
       {/* Use BrowserRouter */}
-         <NavBar/>
+         <NavBar footer = {footer} setFooter = {setFooter} />
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
@@ -19,7 +22,9 @@ function App() {
           <Route path="/feed" element={<Feed />} />
         </Routes>
         <div>
-          hello
+          {
+            footer ? (<Footer/>) : (null)
+          }
         </div>
         
     </div>
