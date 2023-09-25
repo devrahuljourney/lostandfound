@@ -8,6 +8,7 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import About from './components/About';
 import { useState } from 'react';
 function App() {
   const[footer,setFooter] = useState(true);
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <div>
           {

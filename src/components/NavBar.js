@@ -34,7 +34,7 @@ export default function NavBar(props) {
                         <NavLink to = "/Feed">Feed</NavLink>
                     </li>
                     <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
-                        <NavLink to = "/">About</NavLink>
+                        <NavLink to = "/about">About</NavLink>
                     </li>
                     <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/">Contact Us</NavLink>
