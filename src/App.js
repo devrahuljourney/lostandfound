@@ -12,7 +12,7 @@ import { useState } from 'react';
 function App() {
   const[footer,setFooter] = useState(true);
   return (
-    <div>
+    <div className=''>
       {/* Use BrowserRouter */}
          <NavBar footer = {footer} setFooter = {setFooter} />
         <Routes>
