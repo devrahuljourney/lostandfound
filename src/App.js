@@ -36,8 +36,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/feed" element={<Feed />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/about" element={<div className="p-[5%]"><About /></div>} />
+          <Route path="/contactus" element={<div className="p-[5%]"><ContactUs /></div>} />
+
         </Routes>
         <div>{footer ? <Footer /> : null}</div>
       </div>

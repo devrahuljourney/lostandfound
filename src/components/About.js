@@ -14,7 +14,7 @@ export default function About() {
          </div>
          <div className='flex flex-col justify-center items-center gap-8'>
             <h3 data-aos="flip-left" className='md:text-[1.8rem] text-[1.2rem] font-[500]'>Meet the Team:</h3>
-            <div className='flex gap-[70px] md:flex-row flex-col w-[70%] justify-center items-center md:w-[60%]'>
+            <div  className='flex gap-[70px] md:flex-row flex-col w-[70%] justify-center items-center md:w-[60%]'>
                  {/* RAHUL */}
                 <div data-aos="flip-right" className='flex flex-col gap-4 justify-center items-center'>
                   <div className='w-[200px] h-[200px] '>

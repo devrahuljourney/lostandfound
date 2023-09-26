@@ -9,7 +9,7 @@ export default function NavBar(props) {
     const[menu,setMenu] = useState(false);
   return (
     <div>
-        <nav className= 'bg-nav-color shadow-md shadow-black static top-0 left-0 text-[white] sm:h-[100px] font-[600] mx-auto w-full flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-4'>
+        <nav className= 'md:bg-nav-color bg-transparent backdrop-blur-md shadow-md shadow-black fixed z-10  top-0 left-0 text-[white] sm:h-[100px] font-[600] mx-auto w-full flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-4'>
            
                 {/* logo */}
 
