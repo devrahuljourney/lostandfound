@@ -9,6 +9,7 @@ import home from '../assests/home.svg';
 import {AiOutlineUserAdd} from 'react-icons/ai';
 import {GoVerified} from 'react-icons/go';
 import {MdPostAdd} from 'react-icons/md';
+import ContactUs from './ContactUs';
 export default function ()
 
 {
@@ -75,6 +76,8 @@ export default function ()
      </div>
                 
          <About/>
+         <div className='border-b-2'></div>
+         <ContactUs/>
 
     </div>
   )
