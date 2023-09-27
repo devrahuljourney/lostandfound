@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link,NavLink } from 'react-router-dom';
 import kartikey from '../assests/Kartikey.jpg';
 import rahulLap from "../assests/RahulLap.jpg";
 import rahultree from '../assests/RahulTree.jpg';
+import {SlSocialTwitter} from 'react-icons/sl';
+import {SlSocialLinkedin} from 'react-icons/sl';
+import {SlSocialGithub} from 'react-icons/sl';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 export default function About() {
@@ -22,6 +26,18 @@ export default function About() {
                     </div>
                     <p className='text-[1.3rem] font-bold'>Rahul Kumar Verma</p>
                     <p className='text-[1.1rem] text-[#514F4F] '>Fronted Devloper</p>
+                    <div className='flex flex-row gap-4 justify-between items-center p-4'>
+                      <div className='hover:text-button'>
+                       <NavLink  to='https://www.linkedin.com/in/rkvrahul/' > <SlSocialLinkedin  style={{ width: '25px', height: '25px' }}/> </NavLink>
+                      </div>
+                      <div className='hover:text-button'>
+                        <NavLink to='https://github.com/rahulkumarv269' ><SlSocialGithub  style={{ width: '25px', height: '25px' }}  /></NavLink>
+                      </div>
+                      <div className='hover:text-button'>
+                        <NavLink to='https://twitter.com/Rahulkumartwt'  ><SlSocialTwitter  style={{ width: '25px', height: '25px' }} /></NavLink>
+                      </div>
+
+                    </div>
                  </div>
                   {/* kartikey */}
                  <div data-aos="flip-left" className='flex flex-col gap-4 justify-center items-center'>
@@ -30,7 +46,18 @@ export default function About() {
                     </div>
                     <p className='text-[1.3rem] font-bold'>Kartikey Chauhan</p>
                     <p className='text-[1.1rem] text-[#514F4F] '>UI Designer</p>
-                  
+                    <div className='flex flex-row gap-4 justify-between items-center p-4'>
+                      <div className='hover:text-button'>
+                       <NavLink  to='https://www.linkedin.com/in/kartikey-chauhan-595b27286' > <SlSocialLinkedin  style={{ width: '25px', height: '25px' }} /> </NavLink>
+                      </div>
+                      <div className='hover:text-button'>
+                        <NavLink to='https://github.com/rahulkumarv269' ><SlSocialGithub  style={{ width: '25px', height: '25px' }}  /></NavLink>
+                      </div>
+                      <div className='hover:text-button'>
+                        <NavLink to='https://twitter.com/Rahulkumartwt'  ><SlSocialTwitter  style={{ width: '25px', height: '25px' }} /></NavLink>
+                      </div>
+
+                    </div>
                  </div>
             </div>
          </div>

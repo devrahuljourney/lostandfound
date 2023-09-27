@@ -23,11 +23,11 @@ export default function NavBar(props) {
             </div>   
             {/* nav button */}
 
-            <div className={`md:w-[80%]  md:shadow-[0] md:p-0 p-4 shadow-md shadow-black z-30 absolute md:static ${menu ? 'top-[65px]  ' : 'top-[-320px]'} bg-transparent backdrop-blur-md bg-nav-color w-full 
-            sm:left-[20%] flex sm:flex-row flex-col md:justify-evenly md:items-center items-start  justify-between transition-all duration-500 ease-in`}>
+            <div className={`md:w-[80%]  md:shadow-[0] md:p-0 p-4 shadow-md shadow-black z-30 absolute md:static ${menu ? 'top-[65px]  ' : 'top-[-320px]'} bg-transparent backdrop-blur-sm md:text-white text-black text-[18px] md:text-[20px] z-10 w-full 
+            sm:left-[20%] flex sm:flex-row flex-col md:justify-evenly md:items-center items-start  justify-between transition-all duration-500 ease-in`} >
              <div className='w-[50%]'>
                 <ul className='flex  flex-col sm:flex-row py-[0.3125rem]   justify-evenly j md:items-center gap-3'>
-                    <li onClick={()=> {setFooter(true); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
+                    <li onClick={()=> {setFooter(true); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black  hover:p-1'>
                         <NavLink to = "/Home">Home</NavLink>
                     </li>
                     <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>

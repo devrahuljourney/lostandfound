@@ -10,6 +10,7 @@ import {AiOutlineUserAdd} from 'react-icons/ai';
 import {GoVerified} from 'react-icons/go';
 import {MdPostAdd} from 'react-icons/md';
 import ContactUs from './ContactUs';
+import ConnectUs from './ConnectUs';
 export default function ()
 
 {
@@ -28,7 +29,7 @@ export default function ()
         <div data-aos="flip-left" className='flex flex-col md:justify-start md:items-start  justify-center items-center gap-3'>
             <h1 className='text-button font-bold text-[2.2rem] md:py-0 py-6 md:text-[4.6rem]'>Rediscover  Treasure</h1>
             <p className='text-button text-[20px]'>your lost items, your stories, and your treasures reunited. Start your journey to find what's been missing.</p>
-            <button className='bg-button mt-[10%] text-white p-3 rounded-xl font-bold  '>Get Started</button>
+            <button className='bg-button hover:bg-blue-400 shadow-xl shadow-slate-500 mt-[10%] text-white p-3 rounded-xl font-bold  '>Get Started</button>
         </div>
 
         {/* right */}
@@ -78,6 +79,7 @@ export default function ()
          <About/>
          <div className='border-b-2'></div>
          <ContactUs/>
+         <ConnectUs/>
 
     </div>
   )

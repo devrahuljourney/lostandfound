@@ -57,7 +57,7 @@ export default function ContactUs() {
                 placeholder='TYPE YOUR MESSAGE HERE'
             />
          </label>
-         <button  type='submit' className='bg-button text-white p-3 w-[120px] text-[22px] rounded-xl font-bold  '>send</button>
+         <button  type='submit' className='bg-button hover:bg-blue-400 shadow-xl text-white p-3 w-[120px] text-[22px] rounded-xl font-bold  '>send</button>
        </form>
 
     </div>
