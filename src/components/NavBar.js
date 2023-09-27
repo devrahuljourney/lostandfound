@@ -13,20 +13,20 @@ export default function NavBar(props) {
            
                 {/* logo */}
 
-            <div className='w-[20%] ml-6 left-0 md:static absolute'>
-                <img className='mix-blend-multiply sm:w-[80px] w-[40px] ' src= {logo} alt='img' width={70} height={32} loading='lazy'></img>
+            <div className='w-[20%] md:ml-6 md:static '>
+                <img className='mix-blend-multiply sm:w-[80px] md:ml-0 ml-[-130px] md:mt-0 mt-3 w-[40px] ' src= {logo} alt='img' width={70} height={32} loading='lazy'></img>
             </div>
-            <div className='text-3xl md:hidden md:static ' onClick={() => setMenu(!menu)}>
+            <div className='text-3xl text-black md:hidden md:static  absolute right-0 mr-3' onClick={() => setMenu(!menu)}>
                  {
                     menu ?   (<AiOutlineClose/>) : (<GiHamburgerMenu/>)
                  }
             </div>   
             {/* nav button */}
 
-            <div className={`sm:w-[80%] md:shadow-[0] md:p-0 p-4 shadow-md shadow-black z-30 absolute md:static ${menu ? 'top-[50px]' : 'top-[-320px]'} bg-nav-color w-full 
-            sm:left-[20%] flex sm:flex-row flex-col justify-evenly items-center transition-all duration-500 ease-in`}>
+            <div className={`md:w-[80%]  md:shadow-[0] md:p-0 p-4 shadow-md shadow-black z-30 absolute md:static ${menu ? 'top-[65px]  ' : 'top-[-320px]'} bg-transparent backdrop-blur-md bg-nav-color w-full 
+            sm:left-[20%] flex sm:flex-row flex-col md:justify-evenly md:items-center items-start  justify-between transition-all duration-500 ease-in`}>
              <div className='w-[50%]'>
-                <ul className='flex  flex-col sm:flex-row py-[0.3125rem]   justify-evenly items-center gap-3'>
+                <ul className='flex  flex-col sm:flex-row py-[0.3125rem]   justify-evenly j md:items-center gap-3'>
                     <li onClick={()=> {setFooter(true); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/Home">Home</NavLink>
                     </li>
@@ -43,7 +43,7 @@ export default function NavBar(props) {
                 </ul>
              </div>
              <div className='w-[40%]'>
-                <ul className='flex flex-col sm:flex-row py-[0.3125rem]  justify-evenly items-center gap-2'>
+                <ul className='flex flex-col sm:flex-row py-[0.3125rem]  justify-evenly md:items-center gap-2'>
                     <li onClick={()=> {setFooter(false); setMenu(false);}} className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1 border-white border-2 px-3 py-1 rounded-xl'>
                         <NavLink to = "/login">Login</NavLink>
                     </li>

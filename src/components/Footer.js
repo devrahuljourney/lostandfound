@@ -22,7 +22,7 @@ export default function ()
       };
   return (
     
-    <div style={customGradientStyles} className='mt-[5%]  w-full'>
+    <div style={customGradientStyles} className='md:mt-[5%] mt-[10%]  w-full'>
         <div  className='w-[80%]  flex flex-col md:flex-row justify-between items-center mx-auto '>
         {/* left */}
         <div data-aos="flip-left" className='flex flex-col md:justify-start md:items-start  justify-center items-center gap-3'>

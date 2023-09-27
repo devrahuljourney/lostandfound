@@ -6,7 +6,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 export default function About() {
   return (
-    <div id='about' className='w-[80%] mx-auto flex flex-col justify-center items-center gap-5'>
+    <div id='about' className='w-[80%] md:mt-[5%] mt-[10%] mx-auto flex flex-col justify-center items-center gap-5'>
          <div data-aos="flip-right" className=' flex flex-col  justify-center items-center gap-4 mt-7 '>
             <h1 className='md:text-[3.2rem] text-[1.5rem] font-[500]'>About Us</h1>
             <div className='border-b border-4 w-full rounded-lg border-button'></div>
