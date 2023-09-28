@@ -3,10 +3,15 @@ import logo from '../assests/logo.png';
 import { Link,NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import {MdDarkMode}  from 'react-icons/md';
+import {CiLight} from 'react-icons/ci'
 export default function NavBar(props) {
     const footer = props.footer;
     const setFooter = props.setFooter;
+    const dark = props.dark;
+    
     const[menu,setMenu] = useState(false);
+   
   return (
     <div>
         <nav className= 'md:bg-nav-color bg-transparent backdrop-blur-md shadow-md shadow-black fixed z-10  top-0 left-0 text-[white] sm:h-[100px] font-[600] mx-auto w-full flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-4'>
@@ -39,6 +44,11 @@ export default function NavBar(props) {
                     <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/contactus">Contact Us</NavLink>
                     </li>
+                    <div onClick={() => props.setDark(!dark)} className='text-blue-500 hover:text-button cursor-pointer ' >
+                        {
+                            dark ? (<CiLight style={{width : '30px' , height : '30px' }} />) : (<MdDarkMode style={{width : '30px' , height : '30px' }} />)
+                        }
+                    </div>
                     
                 </ul>
              </div>

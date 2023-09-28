@@ -12,6 +12,7 @@ import ContactUs from './components/ContactUs';
 
 function App() {
   const[footer,setFooter] = useState(true);
+  const[dark,setDark] = useState(false);
   // Initialize the footer state from localStorage or default to true
   // const [footer, setFooter] = useState(() => {
   //   const savedFooter = localStorage.getItem('footer');
@@ -30,7 +31,7 @@ function App() {
    
       <div className="">
         {/* Pass footer and setFooter as props to NavBar */}
-        <NavBar footer={footer} setFooter={setFooter} />
+        <NavBar dark = {dark} setDark ={setDark} footer={footer} setFooter={setFooter} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -40,7 +41,7 @@ function App() {
           <Route path="/contactus" element={<div className="p-[5%]"><ContactUs /></div>} />
 
         </Routes>
-        <div>{footer ? <Footer /> : null}</div>
+        <div>{footer ? <Footer dark = {dark}  /> : null}</div>
       </div>
    
   );
