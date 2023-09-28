@@ -8,9 +8,10 @@ import { NavLink } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 export default function 
-() {
+(props) {
+    const dark = props.dark;
   return (
-    <div className='bg-white w-full flex flex-col gap-8 p-9 mt-6 justify-center items-center mx-auto'>
+    <div className={`${dark ? 'bg-black' : 'bg-white' } w-full flex flex-col gap-8 p-9 mt-6 justify-center items-center mx-auto`}>
         <h1 data-aos="flip-right" className='md:text-[3.1rem] text-[1.3rem] font-bold  ' >Connect Us</h1>
         <div className='flex w-[60%] flex-col md:flex-row justify-between items-center gap-7'>
             <div data-aos="flip-left" className='w-[80px] hover:text-white text-[#C13584] h-[80px] border-2 p-5  flex justify-center  hover:cursor-pointer  items-center shadow-lg shadow-slate-700 border-black hover:bg-[#C13584] rounded-full '>

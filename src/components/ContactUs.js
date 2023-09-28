@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-export default function ContactUs() {
+export default function ContactUs(props) {
+    const dark = props.dark;
     const[formData,setFormData] = useState({
         Name:"",
         email:"",
@@ -18,12 +19,14 @@ export default function ContactUs() {
     function submitHandler(event)
     {
         event.preventDefault();
-        console.log(formData)
+        console.log(formData);
+        console.log('contact us')
+        console.log(dark);
     }
     
   return (
     
-    <div  className='md:mt-[5%] mt-[10%]'>
+    <div  className= {` ${dark ? 'bg-black  text-white ' : ''} md:mt-[5%] mt-[10%]`}>
 
        <div data-aos="flip-right" className='flex flex-col justify-center mx-auto  gap-5 items-center w-[80%] p-7'>
         <p className='font-bold text-[1.1rem] '>Get In Touch</p>

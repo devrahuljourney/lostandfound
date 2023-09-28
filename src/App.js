@@ -13,6 +13,7 @@ import ContactUs from './components/ContactUs';
 function App() {
   const[footer,setFooter] = useState(true);
   const[dark,setDark] = useState(false);
+  const[isLoggedIn,setIsLoggedIn] = useState(false);
   // Initialize the footer state from localStorage or default to true
   // const [footer, setFooter] = useState(() => {
   //   const savedFooter = localStorage.getItem('footer');
@@ -31,14 +32,14 @@ function App() {
    
       <div className="">
         {/* Pass footer and setFooter as props to NavBar */}
-        <NavBar dark = {dark} setDark ={setDark} footer={footer} setFooter={setFooter} />
+        <NavBar dark = {dark} setDark ={setDark} isLoggedIn ={isLoggedIn} setIsLoggedIn = {setIsLoggedIn}  footer={footer} setFooter={setFooter} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/about" element={<div className="p-[5%]"><About /></div>} />
-          <Route path="/contactus" element={<div className="p-[5%]"><ContactUs /></div>} />
+          <Route path="/login" element={<Login dark = {dark} setFooter ={setFooter} isLoggedIn ={isLoggedIn} setIsLoggedIn = {setIsLoggedIn} />} />
+          <Route path="/signup" element={<SignUp dark = {dark} />} />
+          <Route path="/feed" element={<Feed dark = {dark} />} />
+          <Route path="/about" element={<div className="p-[5%]"><About dark = {dark} /></div>} />
+          <Route path="/contactus" element={<div className="p-[5%]"><ContactUs dark = {dark} /></div>} />
 
         </Routes>
         <div>{footer ? <Footer dark = {dark}  /> : null}</div>

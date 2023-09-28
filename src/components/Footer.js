@@ -21,9 +21,10 @@ export default function Footer(props)
     const customGradientStyles = {
         background: 'radial-gradient(188.78% 94.89% at 0.87% 7.36%, #C3C6FF 0%, rgba(182, 184, 241, 0.46) 78.95%, rgba(255, 255, 255, 0.12) 100%)',
       };
+     
   return (
     // className={` ${dark ? 'bg-black' :  '' }  md:mt-[5%] mt-[10%]  w-full`}
-    <div className={` ${dark ? 'bg-black text-white' :  '' }  md:mt-[5%] mt-[10%]  w-full`} >
+    <div className={` ${dark ?  'bg-black text-white' : ''} md:mt-[5%] mt-[10%] w-full`} style={dark ? null : customGradientStyles} >
         <div  className='w-[80%]  flex flex-col md:flex-row justify-between items-center mx-auto '>
         {/* left */}
         <div data-aos="flip-left" className='flex flex-col md:justify-start md:items-start  justify-center items-center gap-3'>
@@ -76,10 +77,10 @@ export default function Footer(props)
          </div>
      </div>
                 
-         <About/>
+         <About  />
          <div className='border-b-2'></div>
-         <ContactUs/>
-         <ConnectUs/>
+         <ContactUs />
+         <ConnectUs dark = {props.dark} />
 
     </div>
   )
