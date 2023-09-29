@@ -60,10 +60,13 @@ export default function NavBar(props) {
                 <ul className='flex flex-col sm:flex-row py-[0.3125rem]  justify-evenly md:items-center gap-2'>
                     <li onClick={()=> {setFooter(false); setMenu(false);}} className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1 border-white border-2 px-3 py-1 rounded-xl'>
                         {
-                            !isLoggedIn && 
-                            <NavLink to = "/signup">
+                            !isLoggedIn ? ( <NavLink to = "/signup">
                                 <button>Sign Up</button>
-                            </NavLink>
+                            </NavLink>) :
+                             ( <NavLink to = "/signout">
+                                <button>Sign Out</button>
+                            </NavLink>) 
+                           
                         }
                         
                     </li>

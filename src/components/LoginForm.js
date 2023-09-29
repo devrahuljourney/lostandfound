@@ -24,12 +24,26 @@ export default function LoginForm(props) {
     {
         event.preventDefault();
         console.log(formData);
+        
         if(formData.email == '' || formData.password == '')
         {
-            toast.error("fill all details");
+            toast.error("Haven't fill all !!");
+            
             return;
         }
-        toast.success("Login Successfully !!!");
+        if(formData.email == '' || formData.password == '')
+        {
+            toast.error("Haven't fill all !!");
+            
+            return;
+        }
+        else if(formData.password.length < 8)
+        {
+           toast.warning("password length should be greater than 8");
+           return;
+        }
+        
+        toast.success("SignUp Successfully !!!");
         setIsLoggedIn(true);
         setFooter(true);
         navigate("/Home");
@@ -38,7 +52,7 @@ export default function LoginForm(props) {
     <div>
         <form className='flex mt-[8%] flex-col w-[80%] gap-9 justify-center mx-auto items-center' onSubmit={sumbiltHandler}>
         <label data-aos="flip-left" className='w-[90%] flex justify-center items-center mx-auto'>
-            <input className='md:w-[70%] md:text-[20px] text-[16px] text-slate-400 font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-blue-100 bg-blur-lg border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
+            <input className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
              type='text'
             value={formData.email}
             name='email'
@@ -48,8 +62,8 @@ export default function LoginForm(props) {
               ></input>
              
         </label>
-        <label  className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
-            <input className='md:w-[70%] md:text-[20px] text-[16px] text-slate-400 font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-blue-100 bg-blur-lg border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
+        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+            <input className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
              type= {password ? ("text") : ("password")}
             value={formData.password}
             name='password'
@@ -58,13 +72,13 @@ export default function LoginForm(props) {
               
               ></input>
               
-              <span className='focus:border-blue-300 shadow-slate-500 bg-blue-100 bg-blur-lg border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg' onClick={() => setPassword((prev) => !prev)} >
+              <span className='focus:border-blue-300 shadow-slate-500 bg-tranparent bg-blur-lg border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg' onClick={() => setPassword((prev) => !prev)} >
                 {password ? (<AiOutlineEyeInvisible style={{width:'30px', height:'30px'}}  />) : (<AiOutlineEye style={{width:'30px', height:'30px'}}  />) }
             </span>
         </label>
-        <button  type='submit' className='bg-button hover:bg-blue-400 shadow-xl text-white p-3 w-[120px] text-[22px] rounded-xl font-bold  '>Login</button>
+        <button  type='submit' className='bg-button  hover:bg-blue-400 shadow-xl text-white p-3 w-[120px] text-[22px] rounded-xl font-bold  '>Login</button>
         <div className='w-full border-b-2'></div>
-        <p>already have an account ?? <span> <NavLink to='/signup' > Sign Up </NavLink> </span> </p>
+        <p>already have an account ?? <span className='font-bold text-blue-500'> <NavLink to='/signup' > Sign Up </NavLink> </span> </p>
         </form>
     </div>
   )

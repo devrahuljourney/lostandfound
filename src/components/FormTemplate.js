@@ -9,10 +9,10 @@ export default function FormTemplate(props) {
     };
     
     return (
-      <div className={` ${props.dark ? 'bg-black text-white' : ''} md:mt-[6%] mt-[12%] w-full  flex  justify-center items-center `} style={props.dark ? null : customGradientStyles}>
+      <div className={` ${props.dark ? 'bg-black text-white' : ''}  md:mt-[6%] mt-[12%] w-full  flex  justify-center items-center `} style={props.dark ? null : customGradientStyles}>
         <div className='flex flex-col-reverse md:flex-row gap-7 w-[80%] justify-evenly items-center mx-auto'>
             <div className='md:w-[70%] w-full'>
-              {props.formType === "login" ? <LoginForm setFooter = {props.setFooter} setIsLoggedIn={props.setIsLoggedIn} /> : <SignForm />}
+              {props.formType === "login" ? <LoginForm setFooter = {props.setFooter} setIsLoggedIn={props.setIsLoggedIn} /> : <SignForm setFooter = {props.setFooter} setIsLoggedIn={props.setIsLoggedIn} />}
             </div>
             <div className='md:w-[50%]  w-full'>
               <img src={login} width={600} height={600} />
