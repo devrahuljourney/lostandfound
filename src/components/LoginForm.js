@@ -20,34 +20,34 @@ export default function LoginForm(props) {
         }))
 
     }
-    function sumbiltHandler(event)
-    {
+    function sumbiltHandler(event) {
         event.preventDefault();
         console.log(formData);
-        
-        if(formData.email == '' || formData.password == '')
-        {
-            toast.error("Haven't fill all !!");
-            
-            return;
+      
+        if (formData.email === '' || formData.password === '') {
+          toast.error("Haven't filled all fields!!");
+          return;
         }
-        if(formData.email == '' || formData.password == '')
-        {
-            toast.error("Haven't fill all !!");
-            
-            return;
-        }
-        else if(formData.password.length < 8)
-        {
-           toast.warning("password length should be greater than 8");
-           return;
+        else // Example password complexity check
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(formData.password)) {
+          toast.warning("Password must meet complexity requirements.");
+          return;
         }
         
-        toast.success("SignUp Successfully !!!");
+        else if (formData.password.length < 8) {
+          toast.warning("Password length should be greater than 8");
+          return;
+        }
+      
+        toast.success("Sign Up Successfully !!!");
         setIsLoggedIn(true);
         setFooter(true);
-        navigate("/Home");
-    }
+        console.log('feed trying')
+        // Check the value of 'feed' and navigate accordingly
+        
+          navigate("/Home");
+      }
+      
   return (
     <div>
         <form className='flex mt-[8%] flex-col w-[80%] gap-9 justify-center mx-auto items-center' onSubmit={sumbiltHandler}>
@@ -78,7 +78,7 @@ export default function LoginForm(props) {
         </label>
         <button  type='submit' className='bg-button  hover:bg-blue-400 shadow-xl text-white p-3 w-[120px] text-[22px] rounded-xl font-bold  '>Login</button>
         <div className='w-full border-b-2'></div>
-        <p>already have an account ?? <span className='font-bold text-blue-500'> <NavLink to='/signup' > Sign Up </NavLink> </span> </p>
+        <p>Create a new Account <span className='font-bold text-blue-500'> <NavLink to='/signup' > Sign Up </NavLink> </span> </p>
         </form>
     </div>
   )

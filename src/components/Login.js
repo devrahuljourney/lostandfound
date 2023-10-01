@@ -5,10 +5,11 @@ export default function Login(props) {
    const dark = props.dark;
    const setIsLoggedIn = props.setIsLoggedIn;
    const setFooter = props.setFooter;
+   
   return (
     <div>
     
-      <FormTemplate setIsLoggedIn={ setIsLoggedIn} setFooter = {setFooter} dark = {dark} formType = "login" />
+      <FormTemplate  setIsLoggedIn={ setIsLoggedIn} setFooter = {setFooter} dark = {dark} formType = "login" />
     </div>
   )
 }

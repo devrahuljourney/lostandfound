@@ -39,7 +39,7 @@ export default function NavBar(props) {
                     <li onClick={()=> {setFooter(true); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black  hover:p-1'>
                         <NavLink to = "/Home">Home</NavLink>
                     </li>
-                    <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
+                    <li onClick={()=> {setFooter(false); setMenu(false); } } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/Feed">Feed</NavLink>
                     </li>
                     <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
@@ -82,6 +82,7 @@ export default function NavBar(props) {
                                <button
                                  onClick={() => {
                                    setIsLoggedIn(false);
+                                   
                                     toast.success("SuccessFully logged Out");
                                  }}
                                >

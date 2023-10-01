@@ -109,7 +109,7 @@ export default function SignForm(props) {
 
         <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
             <input className='md:w-[70%] md:text-[15px]  text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
-             type= {password ? ("text") : ("password")}
+             type= {conpassword ? ("text") : ("password")}
             value={formData.confirmPassword}
             name='confirmPassword'
             onChange={changeHandler}
