@@ -42,7 +42,7 @@ export default function LoginForm(props) {
         toast.success("Sign Up Successfully !!!");
         setIsLoggedIn(true);
         setFooter(true);
-        console.log('feed trying')
+        // console.log('feed trying')
         // Check the value of 'feed' and navigate accordingly
         
           navigate("/Home");

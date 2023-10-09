@@ -3,6 +3,7 @@ import kartikey from '../assests/Kartikey.jpg';
 import rahulLap from "../assests/RahulLap.jpg";
 import rahultree from '../assests/RahulTree.jpg';
 import About from '../components/About';
+import { useNavigate } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import home from '../assests/home.svg';
@@ -17,7 +18,7 @@ export default function Footer(props)
     useEffect(()=>{
         Aos.init({duration : 2000});
     },[])
-
+    const navigate = useNavigate();
     const customGradientStyles = {
         background: 'radial-gradient(188.78% 94.89% at 0.87% 7.36%, #C3C6FF 0%, rgba(182, 184, 241, 0.46) 78.95%, rgba(255, 255, 255, 0.12) 100%)',
       };
@@ -30,7 +31,7 @@ export default function Footer(props)
         <div data-aos="flip-left" className='flex flex-col md:justify-start md:items-start  justify-center items-center gap-3'>
             <h1 className='text-button font-bold text-[2.2rem] md:py-0 py-6 md:text-[4.6rem]'>Rediscover  Treasure</h1>
             <p className='text-button text-[20px]'>your lost items, your stories, and your treasures reunited. Start your journey to find what's been missing.</p>
-            <button className='bg-button hover:bg-blue-400 shadow-xl shadow-slate-500 mt-[10%] text-white p-3 rounded-xl font-bold  '>Get Started</button>
+            <button onClick={() => navigate("/Feed")} className='bg-button hover:bg-blue-400 shadow-xl shadow-slate-500 mt-[10%] text-white p-3 rounded-xl font-bold  '>Get Started</button>
         </div>
 
         {/* right */}

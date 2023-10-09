@@ -9,7 +9,7 @@ export default function Card({item}) {
     <div className='flex flex-col  justify-center items-center'  >
         <div className='bg-slate-300 shadow-md shadow-black rounded-lg  md:w-[80%]  flex flex-col gap-4'> 
         <div className='w-full  '>
-            <img className='object-cover'  src = {item.image.url} />
+            <img className='object-cover'  src={item.image} />
         </div>
         <div className='flex p-3 flex-col gap-3 justify-center items-start'>
             

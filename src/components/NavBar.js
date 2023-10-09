@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../assests/logo.png';
+import logo from '../assests/download (1).webp';
 import { Link,NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -23,7 +23,7 @@ export default function NavBar(props) {
                 {/* logo */}
 
             <div className='w-[20%] md:ml-6 md:static '>
-                <img className='mix-blend-multiply sm:w-[80px] md:ml-0 ml-[-130px] md:mt-0 mt-3 w-[40px] ' src= {logo} alt='img' width={70} height={32} loading='lazy'></img>
+                <img className='sm:w-[80px] md:ml-0 ml-[-130px] md:mt-0 mt-3 w-[40px] ' src= {logo} alt='img' width={70} height={32} loading='lazy'></img>
             </div>
             <div className={`text-3xl ${dark ? 'text-white' : 'text-black '} md:hidden md:static  absolute right-0 mr-3`} onClick={() => setMenu(!menu)}>
                  {
