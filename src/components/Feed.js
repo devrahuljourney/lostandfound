@@ -18,9 +18,9 @@ export default function Feed(props) {
   // Check if the user is not logged in
   if (!isLoggedIn) {
     return (
-      <div className={` ${dark ? 'bg-black text-white' : ''} mx-auto md:mt-[5%] flex-col justify-center items-center mt-[20%] w-full`} style={dark ? null : customGradientStyles}>
+      <div className={` ${dark ? 'bg-black text-white' : ''} mx-auto md:mt-[5%] flex-col justify-center items-center mt-[9%] w-full`} style={dark ? null : customGradientStyles}>
        
-        <p className=' bg-transparent backdrop-blur-lg shadow-2xl shadow-[box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;] z-10 p-1 md:p-9 flex absolute md:right-[50%] top-[50%] gap-2 text-[1.5rem] justify-center items-center' >Please <span onClick={() => navigate("/login")} className="text-blue-500 cursor-pointer"> log in </span> to access the Feed.</p>
+        <p className=' bg-transparent backdrop-blur-lg shadow-2xl shadow-[box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;] z-10 p-4 md:p-9 flex absolute md:right-[50%] right-[20%] top-[50%] gap-2 text-[1.5rem] justify-center items-center' >Please <span onClick={() => navigate("/login")} className="text-blue-500 cursor-pointer"> log in </span> to access the Feed.</p>
       </div>
     );
   }

@@ -29,17 +29,18 @@ export default function LoginForm(props) {
           return;
         }
         else // Example password complexity check
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(formData.password)) {
-          toast.warning("Password must meet complexity requirements.");
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(formData.password)) {
+          toast.warning("Password must have number, capital and small letter and be at least 8 characters long.");
           return;
         }
+        
         
         else if (formData.password.length < 8) {
           toast.warning("Password length should be greater than 8");
           return;
         }
       
-        toast.success("Sign Up Successfully !!!");
+        toast.success("Login Successfully !!!");
         setIsLoggedIn(true);
         setFooter(true);
         // console.log('feed trying')

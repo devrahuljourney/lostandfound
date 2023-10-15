@@ -43,7 +43,7 @@ export default function SignForm(props) {
           toast.error("password not matching");
           return;
         }
-        toast.success("Login Successfully !!!");
+        toast.success("Sign Up Successfully !!!");
         setIsLoggedIn(true);
         setFooter(true);
         navigate("/Home");

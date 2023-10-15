@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link,NavLink } from 'react-router-dom';
-import kartikey from '../assests/Kartikey.jpg';
+import kartikey from '../assests/kartikey2.jpeg';
 import rahulLap from "../assests/RahulLap.jpg";
 import rahultree from '../assests/RahulTree.jpg';
 import {SlSocialTwitter} from 'react-icons/sl';

@@ -38,7 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login dark = {dark}  setFooter ={setFooter} isLoggedIn ={isLoggedIn} setIsLoggedIn = {setIsLoggedIn} />} />
           <Route path="/signup" element={<SignUp dark = {dark} setFooter ={setFooter} isLoggedIn ={isLoggedIn} setIsLoggedIn = {setIsLoggedIn}  />} />
-          <Route path="/F̥eed" element={<Feed dark = {dark}  lostAndFoundData = {lostAndFoundData} isLoggedIn={isLoggedIn} />} />
+          <Route path="/feed" element={<Feed dark = {dark}  lostAndFoundData = {lostAndFoundData} isLoggedIn={isLoggedIn} />} />
           <Route path="/about" element={<div className="p-[5%]"><About dark = {dark} /></div>} />
           <Route path="/contactus" element={<div className="p-[5%]"><ContactUs dark = {dark} /></div>} />
 
