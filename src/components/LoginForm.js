@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
 import { Link, NavLink, Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 export default function LoginForm(props) {
+  useEffect(()=>{
+    Aos.init({duration : 2000});
+},[])
     const setIsLoggedIn = props.setIsLoggedIn;
-    const setFooter = props.setFooter;
+    // const setFooter = props.setFooter;
     const[formData,setFormData] = useState({
         email:"",
         password:""
@@ -42,7 +47,7 @@ export default function LoginForm(props) {
       
         toast.success("Login Successfully !!!");
         setIsLoggedIn(true);
-        setFooter(true);
+        // setFooter(true);
         // console.log('feed trying')
         // Check the value of 'feed' and navigate accordingly
         
@@ -64,12 +69,12 @@ export default function LoginForm(props) {
              
         </label>
         <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
-            <input className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
+            <input data-aos="flip-right" className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
              type= {password ? ("text") : ("password")}
             value={formData.password}
             name='password'
             onChange={changehandler}
-            placeholder='ENTER YOUR PASSWORD' 
+            placeholder='PASSWORD' 
               
               ></input>
               

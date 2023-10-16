@@ -15,7 +15,7 @@ export default function Feed(props) {
     background: 'radial-gradient(188.78% 94.89% at 0.87% 7.36%, #C3C6FF 0%, rgba(182, 184, 241, 0.46) 78.95%, rgba(255, 255, 255, 0.12) 100%)',
   };
 
-  // Check if the user is not logged in
+  //Check if the user is not logged in
   if (!isLoggedIn) {
     return (
       <div className={` ${dark ? 'bg-black text-white' : ''} mx-auto md:mt-[5%] flex-col justify-center items-center mt-[9%] w-full`} style={dark ? null : customGradientStyles}>

@@ -9,13 +9,21 @@ export default function LostAndFound(props) {
   const[modalOpen,setModalOpen] = useState(false);
   const customStyles = {
     content: {
-      top: '60%',
+      top: '55%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      
+      width: '90%',
+      height: '80%',
+      '@media (min-width: 640px)': {
+        
+        width: '70%',
+        height: '80%', 
+      },
+      // background: rgb(191,180,225);
+      background: 'linear-gradient(15deg, rgba(191,180,225,1) 0%, rgba(227,227,230,1) 45%, rgba(167,165,209,1) 100%)'
     },
   };
   
@@ -41,7 +49,20 @@ export default function LostAndFound(props) {
 
   function submitHandler(event) {
     event.preventDefault();
-  
+    
+    if (
+      formData.title.trim() === '' ||
+      formData.description.trim() === '' ||
+      formData.question.trim() === '' ||
+      formData.contactInfo.trim() === '' ||
+      formData.location.trim() === '' ||
+      formData.date.trim() === '' ||
+      formData.type.trim() === ''
+    ) {
+      // If any of the required fields are empty, show an error message
+      toast.error('Please fill in all required fields.');
+      return;
+    }
     // Create a new LostAndFound object using the formData
     const newLostFound = { ...formData };
   
@@ -74,39 +95,46 @@ export default function LostAndFound(props) {
         </div>
         <div>
           <Modal style={customStyles} isOpen = {modalOpen}>
-            <form  onSubmit={submitHandler} >
+            <form className='md:w-[60%] w-[100%] mx-auto  overflow-x-hidden '  onSubmit={submitHandler} >
               <div className='flex flex-col gap-4 justify-center items-center font-bold '>
                 <div className='flex flex-row w-full justify-between items-center'>
                   <h1 className='text-[1.5rem]'>Post Items</h1>
-                  <button onClick={()=>setModalOpen(!modalOpen)} > <RxCross1/> </button>
+                  <button onClick={()=>setModalOpen(!modalOpen)} > <RxCross1  style={ {width: "30px"  }} /> </button>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>Item Name <sub className='text-red-500 text-[1.2rem]' >*</sub> </h1>
-                  <input name='title' value={formData.title} onChange={changeHandler} type='text' ></input>
+                  <input  className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px]  placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                   name='title' value={formData.title} onChange={changeHandler} type='text' placeholder='ENTER ITEM NAME' ></input>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>Desciption <sub className='text-red-500 text-[1.2rem]' >*</sub> </h1>
-                  <textarea name='description' value={formData.description} onChange={changeHandler} type='text' ></textarea>
+                  <textarea   className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                   name='description' value={formData.description} placeholder='WRITE ABOUT ITEM' onChange={changeHandler} type='text' ></textarea>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>Enter your Questions <sub className='text-red-500 text-[1.2rem]' >*</sub> </h1>
-                  <input name='question' value={formData.question} onChange={changeHandler} type='text' ></input>
+                  <input  className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                    name='question' value={formData.question} placeholder='ENTER YOUR QUESTION' onChange={changeHandler} type='text' ></input>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                    <h1>Enter your Email  <sub className='text-red-500 text-[1.2rem]' >*</sub></h1>
-                  <input name='contactInfo' value={formData.contactInfo} onChange={changeHandler} type='email' required />
+                  <input   className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                  name='contactInfo' placeholder='ENTER YOUR EMAIL' value={formData.contactInfo} onChange={changeHandler} type='email' required />
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>Enter Location <sub className='text-red-500 text-[1.2rem]' >*</sub> </h1>
-                  <input name='location' value={formData.location} onChange={changeHandler} type='text' ></input>
+                  <input  className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 ' 
+                   name='location' placeholder='ENTER LOST/FOUND LOCATION' value={formData.location} onChange={changeHandler} type='text' ></input>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>Enter lost date <sub className='text-red-500 text-[1.2rem]' >*</sub> </h1>
-                  <input name='date' value={formData.date} onChange={changeHandler} type='date' ></input>
+                  <input   className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                   name='date' placeholder='SELECT LOST/FOUND DATE' value={formData.date} onChange={changeHandler} type='date' ></input>
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex gap-3 flex-col w-full justify-between items-start'>
                   <h1>item type <sub className='text-red-500 text-[1.2rem]' >*</sub></h1>
-                  <select name='type' value={formData.type} onChange={changeHandler}
+                  <select placeholder='LOST/FOUND'   className=' w-full md:w-1/2 h-[50px] bg-white shadow-md shadow-slate-800 rounded-xl border-2 text-[20px] text-slate-500 border-blue-500 md:placeholder:text-[20px] placeholder:text-[16px] placeholder:text-black-100 placeholder:text-center placeholder:font-[500]  font-[400] focus:outline-none focus:ring focus:border-blue-500 '
+                   name='type' value={formData.type} onChange={changeHandler}
                   
                 >
                   <option value="">Select an option</option>
@@ -116,9 +144,9 @@ export default function LostAndFound(props) {
                 </select>
 
                 </div>
-                <div className='flex flex-col w-full justify-between items-start'>
+                <div className='flex  gap-3 flex-col w-full justify-between items-start'>
                   <h1>Image Input</h1>
-                  <input 
+                  <input  
                   onChange={(e) => {
                   const file = e.target.files[0];
                   if (file) {

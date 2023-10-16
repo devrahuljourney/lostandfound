@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import LoginForm from './LoginForm';
 import SignForm from './SignForm';
 import login from '../assests/login.svg'
 export default function FormTemplate(props) {
+  useEffect(()=>{
+    Aos.init({duration : 2000});
+},[])
+    
     const customGradientStyles = {
       background:
         'radial-gradient(188.78% 94.89% at 0.87% 7.36%, #C3C6FF 0%, rgba(182, 184, 241, 0.46) 78.95%, rgba(255, 255, 255, 0.12) 100%)',
@@ -14,7 +20,7 @@ export default function FormTemplate(props) {
             <div className='md:w-[70%] w-full'>
               {props.formType === "login" ? <LoginForm setFooter = {props.setFooter} setIsLoggedIn={props.setIsLoggedIn}  /> : <SignForm setFooter = {props.setFooter} setIsLoggedIn={props.setIsLoggedIn} />}
             </div>
-            <div className='md:w-[50%]  w-full'>
+            <div data-aos="flip-right" className='md:w-[50%]  w-full'>
               <img src={login} width={600} height={600} />
             </div>    
         </div>

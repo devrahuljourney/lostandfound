@@ -1,7 +1,9 @@
 import React from 'react'
-
-export default function Home() {
+import Footer from './Footer'
+export default function Home(props) {
   return (
-    <div></div>
+    <div>
+       <Footer dark = {props.dark}  /> 
+    </div>
   )
 }

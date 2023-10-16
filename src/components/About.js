@@ -6,10 +6,15 @@ import rahultree from '../assests/RahulTree.jpg';
 import {SlSocialTwitter} from 'react-icons/sl';
 import {SlSocialLinkedin} from 'react-icons/sl';
 import {SlSocialGithub} from 'react-icons/sl';
+import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 export default function About(props) {
   const dark = props.dark;
+    useEffect(()=>{
+        Aos.init({duration : 2000});
+    },[])
+
   return (
     <div id='about' className= {`${dark ? 'bg-black text-white' : '' } w-[80%] md:mt-[5%] mt-[10%] mx-auto flex flex-col justify-center items-center gap-5`}>
          <div data-aos="flip-right" className=' flex flex-col  justify-center items-center gap-4 mt-7 '>
@@ -26,7 +31,7 @@ export default function About(props) {
                     <img className='rounded-full w-[190px] h-[190px] border-white border-[2px]' src={rahulLap}></img>
                     </div>
                     <p className='text-[1.3rem] font-bold'>Rahul Kumar Verma</p>
-                    <p className='text-[1.1rem] text-[#514F4F] '>Fronted Devloper</p>
+                    <p className='text-[1.1rem] text-[#514F4F] '>Fronted Developer</p>
                     <div className='flex flex-row gap-4 justify-between items-center p-4'>
                       <div className='hover:text-button'>
                        <NavLink  to='https://www.linkedin.com/in/rkvrahul/' > <SlSocialLinkedin  style={{ width: '25px', height: '25px' }}/> </NavLink>
@@ -55,7 +60,7 @@ export default function About(props) {
                         <NavLink to='https://github.com/rahulkumarv269' ><SlSocialGithub  style={{ width: '25px', height: '25px' }}  /></NavLink>
                       </div>
                       <div className='hover:text-button'>
-                        <NavLink to='https://twitter.com/Rahulkumartwt'  ><SlSocialTwitter  style={{ width: '25px', height: '25px' }} /></NavLink>
+                        <NavLink to='https://twitter.com/kartikeych90'  ><SlSocialTwitter  style={{ width: '25px', height: '25px' }} /></NavLink>
                       </div>
 
                     </div>

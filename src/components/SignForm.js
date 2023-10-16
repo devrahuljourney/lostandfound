@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
 import { Link, NavLink, Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 export default function SignForm(props) {
+  useEffect(()=>{
+    Aos.init({duration : 2000});
+},[])
   const setIsLoggedIn = props.setIsLoggedIn;
-    const setFooter = props.setFooter;
+    // const setFooter = props.setFooter;
   const navigate = useNavigate();
     const[password,setPassword] = useState(false);
     const[conpassword,setconPassword] = useState(false);
@@ -45,13 +51,13 @@ export default function SignForm(props) {
         }
         toast.success("Sign Up Successfully !!!");
         setIsLoggedIn(true);
-        setFooter(true);
+        // setFooter(true);
         navigate("/Home");
   }
   return (
     <div>
       <form className='flex mt-[8%] flex-col w-[80%] gap-9 justify-center mx-auto items-center' onSubmit={sumbiltHandler} >
-        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+        <label data-aos="flip-left" className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
           <input  className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
           type='text'
           name='firstName'
@@ -64,7 +70,7 @@ export default function SignForm(props) {
           
         </label>
 
-        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+        <label data-aos="flip-left" className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
           <input  className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
           type='text'
           name='lastName'
@@ -78,7 +84,7 @@ export default function SignForm(props) {
         </label>
 
 
-        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+        <label data-aos="flip-left" className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
           <input  className='md:w-[70%] md:text-[20px] text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent   border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
           type='email'
           name='email'
@@ -92,13 +98,13 @@ export default function SignForm(props) {
         </label>
 
         <div className='flex flex-col gap-4 justify-center items-center'>
-        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+        <label data-aos="flip-left" className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
             <input className='md:w-[70%] md:text-[15px] text-[16px] placeholder:text-black text-black  font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
              type= {password ? ("text") : ("password")}
             value={formData.password}
             name='password'
             onChange={changeHandler}
-            placeholder='ENTER YOUR PASSWORD' 
+            placeholder='PASSWORD' 
               
               ></input>
               
@@ -107,13 +113,13 @@ export default function SignForm(props) {
             </span>
         </label>
 
-        <label className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
-            <input className='md:w-[70%] md:text-[15px]  text-[16px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
+        <label data-aos="flip-left" className='w-[90%] flex justify-center items-center gap-4 mx-auto'>
+            <input className='md:w-[70%] md:text-[14px]  text-[15px] placeholder:text-black text-black font-[400] w-full shadow-xl focus:outline-none focus:ring focus:border-blue-300 shadow-slate-500 bg-tranparent border-2 border-spacing-3 rounded-full p-4 backdrop-blur-lg '
              type= {conpassword ? ("text") : ("password")}
             value={formData.confirmPassword}
             name='confirmPassword'
             onChange={changeHandler}
-            placeholder='RE-ENTER YOUR PASSWORD' 
+            placeholder='RE-ENTER PASSWORD' 
               
               ></input>
               

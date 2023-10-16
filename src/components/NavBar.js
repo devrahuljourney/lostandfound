@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function NavBar(props) {
     const isLoggedIn = props.isLoggedIn;
     const setIsLoggedIn = props.setIsLoggedIn;
-    const footer = props.footer;
-    const setFooter = props.setFooter;
+    // const footer = props.footer;
+    // const setFooter = props.setFooter;
     const dark = props.dark;
     
     const[menu,setMenu] = useState(false);
@@ -36,16 +36,16 @@ export default function NavBar(props) {
             md:left-[20%] flex md:flex-row flex-col md:justify-evenly md:items-center items-start  justify-between transition-all duration-200 ease-in`} >
              <div className='w-[50%]'>
                 <ul className='flex  flex-col md:flex-row py-[0.3125rem]   justify-evenly j md:items-center gap-3'>
-                    <li onClick={()=> {setFooter(true); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black  hover:p-1'>
+                    <li onClick={()=> { setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black  hover:p-1'>
                         <NavLink to = "/Home">Home</NavLink>
                     </li>
-                    <li onClick={()=> {setFooter(false); setMenu(false); } } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
+                    <li onClick={()=> { setMenu(false); } } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/Feed">Feed</NavLink>
                     </li>
-                    <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
+                    <li onClick={()=> { setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/about">About</NavLink>
                     </li>
-                    <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
+                    <li onClick={()=> { setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1'>
                         <NavLink to = "/contactus">Contact Us</NavLink>
                     </li>
                     <div onClick={() =>  {setMenu(false); props.setDark(!dark);} } className='text-blue-500 hover:text-button cursor-pointer ' >
@@ -58,7 +58,7 @@ export default function NavBar(props) {
              </div>
              <div className='w-[40%]'>
                 <ul className='flex flex-col md:flex-row py-[0.3125rem]  justify-evenly md:items-center gap-4 md:gap-2'>
-                    <li onClick={()=> {setFooter(false); setMenu(false);}} className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1 border-white border-2 px-3 py-1 rounded-xl'>
+                    <li onClick={()=> { setMenu(false);}} className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1 border-white border-2 px-3 py-1 rounded-xl'>
                         {
                             !isLoggedIn ? ( <NavLink to = "/signup">
                                 <button>Sign Up</button>
@@ -70,7 +70,7 @@ export default function NavBar(props) {
                         }
                         
                     </li>
-                    <li onClick={()=> {setFooter(false); setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1  px-3 py-1 rounded-xl shadow-black shadow-md '>
+                    <li onClick={()=> { setMenu(false);} } className='hover:bg-white hover:rounded-lg hover:text-black hover:p-1  px-3 py-1 rounded-xl shadow-black shadow-md '>
                     {
                             !isLoggedIn ? (
                                 <NavLink to = "/login">

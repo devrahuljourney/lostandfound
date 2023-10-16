@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 export default function ContactUs(props) {
+    useEffect(()=>{
+        Aos.init({duration : 2000});
+    },[])
     const dark = props.dark;
     const[formData,setFormData] = useState({
         Name:"",
